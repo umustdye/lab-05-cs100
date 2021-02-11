@@ -4,8 +4,23 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_SUBDIRECTORY(googletest)
 
-ADD_EXECUTABLE(spreadsheet main.cpp spreadsheet.cpp select_contains.hpp select_or.hpp select_and.hpp select_not.hpp )
-ADD_EXECUTABLE(test test.cpp)
+ADD_EXECUTABLE(spreadsheet
+    main.cpp
+    spreadsheet.cpp
+    select_contains.hpp
+    select_or.hpp
+    select_and.hpp
+    select_not.hpp
+)
+
+ADD_EXECUTABLE(test
+    test.cpp
+    spreadsheet.cpp
+    select_contains.hpp
+    select_or.hpp
+    select_and.hpp
+    select_not.hpp
+)
 
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

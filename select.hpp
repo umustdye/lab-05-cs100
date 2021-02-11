@@ -31,7 +31,7 @@ public:
 
     virtual bool select(const Spreadsheet* sheet, int row) const
     {
-        return select(sheet->cell_data(row, column));
+        return column < 0 ? false : select(sheet->cell_data(row, column));
     }
 
     // Derived classes can instead implement this simpler interface.
