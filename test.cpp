@@ -4,6 +4,8 @@
 #include "select_contains_test.hpp"
 #include "select_or.hpp"
 #include "select_or_test.hpp"
+#include "select_and.hpp"
+#include "select_and_test.hpp"
 #include "gtest/gtest.h"
 
 int main(int argc, char **argv) {
