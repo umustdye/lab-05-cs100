@@ -14,12 +14,8 @@ ADD_EXECUTABLE(spreadsheet
 )
 
 ADD_EXECUTABLE(test
-    test.cpp
     spreadsheet.cpp
-    select_contains.hpp
-    select_or.hpp
-    select_and.hpp
-    select_not.hpp
+    test.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)

@@ -1,0 +1,9 @@
+Amanda Andrews 22 business 
+Brian Becker 21 computer science 
+Carol Conners 21 computer science 
+Joe Jackson 21 mathematics 
+Sarah Summers 21 computer science 
+Diane Dole 20 computer engineering 
+David Dole 22 electrical engineering 
+Dominick Dole 22 communications 
+George Genius 9 astrophysics 
