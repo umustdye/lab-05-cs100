@@ -3,8 +3,6 @@
 
 #include "select.hpp"
 
-using std::tolower;
-
 class Select_Contains : public Select_Column {
     private:
         std::string val;
@@ -13,9 +11,10 @@ class Select_Contains : public Select_Column {
         Select_Contains(const Spreadsheet *sheet, std::string col, std::string val) : Select_Column(sheet, col), val(val) {}
         ~Select_Contains() {}
         bool select(const std::string &str) const {
-            if(val.empty() || val.size() > str.size()) return false;
+            if(val.size() > str.size()) return false;
+            if(val.empty()) return true;
             for(int i = 0, j = 0; i < str.size(); ++i) {
-                if(tolower(val[j]) == tolower(str[i])) {
+                if(val[j] == str[i]) {
                     ++j;
                     if(j == val.size()) return true;
                 } else {

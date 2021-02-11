@@ -23,16 +23,22 @@ void fillSheet(Spreadsheet &sheet) {
 //SELECT_CONTAINS TEST
 TEST(Select_Contains, EmptyQuery) {
     //Initialize test
-    stringstream strm;
+    stringstream strm, ans;
     Spreadsheet sheet;
     fillSheet(sheet);
     sheet.set_selection(new Select_Contains(&sheet, "Last", ""));
     
+    std::string str;
+    std::fstream file("test_answers/null_select.txt", std::ios::in);
+    while(getline(file, str)) {
+        ans<<str<<std::endl;
+    }
+
     //Run test
     sheet.print_selection(strm);
 
     //Assert
-    EXPECT_EQ("", strm.str());
+    EXPECT_EQ(ans.str(), strm.str());
 }
 
 TEST(Select_Contains, EmptyColumn) {
