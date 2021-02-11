@@ -35,12 +35,40 @@ TEST(Select_Contains, EmptyQuery) {
     EXPECT_EQ("", strm.str());
 }
 
+TEST(Select_Contains, EmptyColumn) {
+    //Initialize test
+    stringstream strm;
+    Spreadsheet sheet;
+    fillSheet(sheet);
+    sheet.set_selection(new Select_Contains(&sheet, "", "Jackson"));
+    
+    //Run test
+    sheet.print_selection(strm);
+
+    //Assert
+    EXPECT_EQ("", strm.str());
+}
+
 TEST(Select_Contains, BadColumn) {
     //Initialize test
     stringstream strm;
     Spreadsheet sheet;
     fillSheet(sheet);
     sheet.set_selection(new Select_Contains(&sheet, "last", "Dole"));
+    
+    //Run test
+    sheet.print_selection(strm);
+
+    //Assert
+    EXPECT_EQ("", strm.str());
+}
+
+TEST(Select_Contains, BadName) {
+    //Initialize test
+    stringstream strm;
+    Spreadsheet sheet;
+    fillSheet(sheet);
+    sheet.set_selection(new Select_Contains(&sheet, "last", "Schlangerbob"));
     
     //Run test
     sheet.print_selection(strm);
